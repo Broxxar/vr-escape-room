@@ -20,13 +20,19 @@ public class CustomGrabbable : OVRGrabbable
 
     public void OnTriggerEnter(Collider col)
     {
-        if (col.gameObject.tag == "Pineapple")
+        if (col.gameObject.CompareTag("Snappable"))
         {
             if (m_grabbedBy != null)
             {
                 // Notify the hand to release destroyed grabbables
                 m_grabbedBy.ForceRelease(this);
             }
+
+            GetComponent<Rigidbody>().isKinematic = true;
+            transform.parent = col.gameObject.transform.Find("SnapPos");
+            transform.localPosition = Vector3.zero;
+            transform.localRotation = Quaternion.identity;
         }
+
     }
 }

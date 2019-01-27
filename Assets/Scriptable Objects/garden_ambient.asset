@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2439f0b7a7d34287b935a898cd1c5d3, type: 3}
+  m_Name: garden_ambient
+  m_EditorClassIdentifier: 
+  Clip: {fileID: 8300000, guid: ea53d772a8b4f4144b3aee6d7efdf59d, type: 3}
+  _volume: 0.2
+  _isStaticLooped: 1
+  _isDynamicLooped: 0
+  _bpm: 60
+  _introBeats: 0
+  _loopBeats: 0

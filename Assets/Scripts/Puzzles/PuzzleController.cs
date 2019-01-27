@@ -3,11 +3,9 @@ using UnityEngine;
 
 public class PuzzleController : MonoBehaviour {
 
-    public List<Puzzle> puzzles;
+    private List<Puzzle> puzzles;
 
-	// Use this for initialization
 	void Start () {
-
         foreach(var puzzle in puzzles)
         {
             puzzle.onComplete.AddListener(OnPuzzleCompleted);
@@ -18,6 +16,11 @@ public class PuzzleController : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.P)) {
             OnAllPuzzlesCompleted();
         }
+    }
+
+    public void AddPuzzle(Puzzle puzzle) {
+        puzzles.Add(puzzle);
+        puzzle.onComplete.AddListener(OnPuzzleCompleted);
     }
 
     void OnPuzzleCompleted(Puzzle puzzle)

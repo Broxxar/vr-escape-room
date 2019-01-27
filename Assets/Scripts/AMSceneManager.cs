@@ -13,6 +13,7 @@ public class AMSceneManager : MonoBehaviour {
     private void Start() {
         fxController = GetComponent<GlobalFXController>();
         fxController.FadeWorldIn();
+        fxController.FadeColor(0, 1);
         SceneManager.LoadScene(sceneNames[sceneIndex], LoadSceneMode.Additive);
     }
 

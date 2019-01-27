@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Collections;
+using UnityEngine;
 
 public class AudioController : MonoBehaviour
 {
@@ -14,6 +16,8 @@ public class AudioController : MonoBehaviour
     private AudioClipData _bgmClipData;
 
     private AudioClipData _ambientClipData;
+
+    private Coroutine _currentVOCoroutine;
 
     private static AudioController _instance;
 
@@ -47,11 +51,26 @@ public class AudioController : MonoBehaviour
         _ambientSource.Play();
     }
 
-    public void PlayVO(AudioClip audioClip)
+    public void PlayVO(AudioClip audioClip, Action onLineComplete = null)
     {
+        if (_currentVOCoroutine != null)
+        {
+            StopCoroutine(_currentVOCoroutine);
+            _currentVOCoroutine = null;
+        }
         _voSource.Stop();
         _voSource.clip = audioClip;
         _voSource.Play();
+        _currentVOCoroutine = StartCoroutine(WaitForVOAsync(audioClip, onLineComplete));
+    }
+
+    private IEnumerator WaitForVOAsync(AudioClip audioClip, Action onLineComplete)
+    {
+        yield return new WaitForSeconds(audioClip.length);
+        if (onLineComplete != null)
+        {
+            onLineComplete.Invoke();
+        }
     }
 
     private void Update()

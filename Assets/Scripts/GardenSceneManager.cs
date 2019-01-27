@@ -4,26 +4,15 @@ using UnityEngine;
 
 public class GardenSceneManager : MonoBehaviour {
 
-    public int bulbsCollected = 0;
+    public PuzzleController puzzleController;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    private void Start() {
+        GameObject eatingSphere = GameObject.Find("OVRCameraRig").transform
+                .Find("TrackingSpace")
+                .Find("CenterEyeAnchor")
+                .Find("EatingSphere")
+                .gameObject;
 
-    public void AddBulbs()
-    {
-        bulbsCollected += 1;
-        Debug.Log(bulbsCollected);
-    }
-
-    public void SubtractBulbs()
-    {
-        bulbsCollected -= 1;
+        puzzleController.AddPuzzle(eatingSphere.GetComponent<GardenBulbPuzzle>());
     }
 }

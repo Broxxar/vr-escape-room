@@ -17,6 +17,8 @@ public class AMSceneManager : MonoBehaviour
     private Transform fxControllerTargetTransform; // FXController will follow this transform if not null
     private GameObject persistedObj;
 
+    private const float TRANSITION_TIME = 4.0f;
+
     private void Start()
     {
         if (instance == null)
@@ -60,11 +62,14 @@ public class AMSceneManager : MonoBehaviour
 
     private void FinishedLoadingScene(AsyncOperation obj)
     {
-        fxController.FadeDistance(1, 2, FinishedFadingIn);
-        fxController.FadeColor(1, 2);
+        fxController.FadeDistance(1, TRANSITION_TIME, FinishedFadingIn);
+        fxController.FadeColor(1, TRANSITION_TIME);
         currentLevelMetadata = GameObject.Find(LEVEL_METADATA_NAME).GetComponent<LevelMetadata>();
         player.transform.position = currentLevelMetadata.spawnLocation.position;
         player.transform.rotation = currentLevelMetadata.spawnLocation.rotation;
+        AudioController.Instance.PlayBGM(currentLevelMetadata.sceneBgm);
+        AudioController.Instance.PlayAmbient(currentLevelMetadata.sceneAmbient);
+
         SceneManager.SetActiveScene(SceneManager.GetSceneByName(currentSceneName));
     }
 

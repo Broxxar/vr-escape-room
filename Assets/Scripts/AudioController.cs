@@ -53,19 +53,4 @@ public class AudioController : MonoBehaviour
             _bgmSource.time = _bgmClipData.DynamicLoopTime;
         }
     }
-
-    public AudioClipData TestBGMClipData;
-    public AudioClipData TestAmbientClipData;
-
-    private void Start()
-    {
-        if (TestBGMClipData)
-        {
-            PlayBGM(TestBGMClipData);
-        }
-        if (TestAmbientClipData)
-        {
-            PlayAmbient(TestAmbientClipData);
-        }
-    }
 }

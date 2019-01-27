@@ -764,7 +764,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &490017829
 GameObject:
@@ -1643,8 +1643,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnLocation: {fileID: 1254441515}
   puzzleController: {fileID: 1803270071}
-  sceneBgm: {fileID: 0}
-  sceneAmbient: {fileID: 0}
+  sceneBgm: {fileID: 11400000, guid: 3585df1255d314f93a4a7d76a13005cc, type: 2}
+  sceneAmbient: {fileID: 11400000, guid: 4219bb924a9ff478095cc028ef8513cc, type: 2}
 --- !u!1 &813840863
 GameObject:
   m_ObjectHideFlags: 0
@@ -2115,7 +2115,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4152268874436698, guid: d90581d3dafab9d43981e92f001ea32f, type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 114594264198458174, guid: d90581d3dafab9d43981e92f001ea32f,
         type: 2}

@@ -796,8 +796,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e1444c6b466642b487adac7c75f8321, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _whiteOutDistance: 25
-  _desaturationDistance: 25
+  _whiteOutDistance: 0
+  _desaturationDistance: 0
   _saturationValue: 0
   _fadeOutValue: 1
   _noiseTexture: {fileID: 2800000, guid: 120f863259f0946cfbe82287f6966c7b, type: 3}
@@ -839,6 +839,7 @@ MonoBehaviour:
     m_RotationOrder: 0
   cameras:
   - {fileID: 57899903}
+  _transitionProgress: 0
 --- !u!4 &1263693652
 Transform:
   m_ObjectHideFlags: 0

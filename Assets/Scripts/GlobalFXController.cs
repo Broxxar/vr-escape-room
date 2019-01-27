@@ -29,7 +29,9 @@ public class GlobalFXController : MonoBehaviour
     [SerializeField]
     private Camera[] cameras;
 
-    private Coroutine _activeCoroutine;
+    private Coroutine _activeDistanceCoroutine;
+    private Coroutine _activeColorCoroutine;
+    [SerializeField]
     private float _transitionProgress;
     private float _transitionVelocity;
 
@@ -41,40 +43,78 @@ public class GlobalFXController : MonoBehaviour
     private const string GlobalFXKeyword = "_GLOBALFX_ENABLED";
     private const string FadeOutValueName = "_GlobalFadeOutValue";
 
+    /**
+     * Changes the distance of the fade to a target distance, in roughly the time provided.
+     */
+    public void FadeDistance(float targetDistance, float transitionTime, Action onComplete = null) {
+        if (_activeDistanceCoroutine != null) {
+            StopCoroutine(_activeDistanceCoroutine);
+            _activeDistanceCoroutine = null;
+        }
+        _activeDistanceCoroutine = StartCoroutine(DistanceTransitionAsync(targetDistance, transitionTime, onComplete));
+    }
+
+    /**
+     * Changes the color of the fade + skybox to a target grayscale, in roughly the time provided.
+     */
+    public void FadeColor(float targetColor, float transitionTime, Action onComplete = null) {
+        if (_activeColorCoroutine != null) {
+            StopCoroutine(_activeColorCoroutine);
+            _activeColorCoroutine = null;
+        }
+        _activeColorCoroutine = StartCoroutine(ColorTransitionAsync(targetColor, transitionTime, onComplete));
+    }
+
     public void FadeWorldIn(Action onComplete = null)
     {
-        if (_activeCoroutine != null)
+        if (_activeDistanceCoroutine != null)
         {
-            StopCoroutine(_activeCoroutine);
-            _activeCoroutine = null;
+            StopCoroutine(_activeDistanceCoroutine);
+            _activeDistanceCoroutine = null;
         }
-        _activeCoroutine = StartCoroutine(TransitionAsync(1.0f, onComplete));
+        float transitionTime = Mathf.Abs(1.0f - _transitionProgress);
+        _activeDistanceCoroutine = StartCoroutine(DistanceTransitionAsync(1.0f, transitionTime, onComplete));
     }
 
     public void FadeWorldOut(Action onComplete = null)
     {
-        if (_activeCoroutine != null)
+        if (_activeDistanceCoroutine != null)
         {
-            StopCoroutine(_activeCoroutine);
-            _activeCoroutine = null;
+            StopCoroutine(_activeDistanceCoroutine);
+            _activeDistanceCoroutine = null;
         }
-        _activeCoroutine = StartCoroutine(TransitionAsync(0.0f, onComplete));
+        float transitionTime = Mathf.Abs(0.0f - _transitionProgress);
+        _activeDistanceCoroutine = StartCoroutine(DistanceTransitionAsync(0.0f, transitionTime, onComplete));
     }
 
-    private IEnumerator TransitionAsync(float transitionTarget, Action onComplete)
+    private IEnumerator DistanceTransitionAsync(float transitionTarget, float transitionTime, Action onComplete)
     {
-        var transitionTime = Mathf.Abs(transitionTarget - _transitionProgress);
-        while(Mathf.Abs(_transitionProgress - transitionTarget) > 0.05f)
+        //var transitionTime = Mathf.Abs(transitionTarget - _transitionProgress);
+        float velocity = 0;
+        while(Mathf.Abs(_transitionProgress - transitionTarget) > 0.01f)
         {
-            _transitionProgress = Mathf.SmoothDamp(_transitionProgress, transitionTarget, ref _transitionVelocity, transitionTime);
+            _transitionProgress = Mathf.SmoothDamp(_transitionProgress, transitionTarget, ref velocity, transitionTime);
             _whiteOutDistance = _whiteOutCurve.Evaluate(_transitionProgress);
             _desaturationDistance = _desaturationCurve.Evaluate(_transitionProgress);
             yield return null;
         }
+        _transitionProgress = transitionTarget;
         _whiteOutDistance = _whiteOutCurve.Evaluate(transitionTarget);
         _desaturationDistance = _desaturationCurve.Evaluate(transitionTarget);
         if (onComplete != null)
         {
+            onComplete.Invoke();
+        }
+    }
+
+    private IEnumerator ColorTransitionAsync(float colorTarget, float transitionTime, Action onComplete) {
+        float velocity = 0;
+        while (Mathf.Abs(colorTarget - _fadeOutValue) > 0.01f) {
+            _fadeOutValue = Mathf.SmoothDamp(_fadeOutValue, colorTarget, ref velocity, transitionTime);
+            yield return null;
+        }
+        _fadeOutValue = colorTarget;
+        if (onComplete != null) {
             onComplete.Invoke();
         }
     }
@@ -100,6 +140,15 @@ public class GlobalFXController : MonoBehaviour
 
         foreach (Camera cam in cameras) {
             cam.backgroundColor = new Color(_fadeOutValue, _fadeOutValue, _fadeOutValue);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space)) {
+            FadeDistance(1 - _transitionProgress, 1, () => print("Completed distance"));
+            FadeColor(1 - _fadeOutValue, 1, () => print("Completed color"));
+        } else if (Input.GetKeyDown(KeyCode.A)) {
+            FadeWorldIn();
+        } else if (Input.GetKeyDown(KeyCode.D)) {
+            FadeWorldOut();
         }
     }
 }

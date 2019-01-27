@@ -83,7 +83,8 @@ public class AMSceneManager : MonoBehaviour
      */
     public void ReturnToStartingZone()
     {
-        currentLevel += 1;
+        print("INcreasing stuff");
+        currentLevel = 1;
         fxController.FadeDistance(0, 1, LoadStartingScene);
         fxController.FadeColor(0, 1);
     }

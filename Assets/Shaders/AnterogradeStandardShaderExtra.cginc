@@ -14,14 +14,14 @@ half4 PostProcessFragment(half4 color, half3 posWorld, half3 normalWorld)
         
         float3 triW = abs(normalWorld);
         triW /= (triW.x + triW.y + triW.z);
-        float3 noiseUV = posWorld * 0.25;
+        float3 noiseUV = posWorld;
         float xyNoise = tex2D(_GlobalDesaturationNoiseTex, noiseUV.xy);
         float xzNoise = tex2D(_GlobalDesaturationNoiseTex, noiseUV.xz);
         float yzNoise = tex2D(_GlobalDesaturationNoiseTex, noiseUV.yz);    
         float noise = xyNoise * triW.z + xzNoise * triW.y + yzNoise * triW.x;
         
-        float tDesat = saturate(smoothstep(0, _GlobalDesaturationDistance, dist - noise));
-        float tWhiteOut = saturate(smoothstep(0, _GlobalWhiteOutDistance, dist - noise));
+        float tDesat = saturate(smoothstep(0, _GlobalDesaturationDistance, dist - noise * saturate(_GlobalDesaturationDistance)));
+        float tWhiteOut = saturate(smoothstep(0, _GlobalWhiteOutDistance, dist - noise * saturate(_GlobalWhiteOutDistance)));
         
         color = lerp(color, lum, min(1 - _GlobalSaturationValue, tDesat));
 

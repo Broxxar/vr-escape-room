@@ -6,10 +6,10 @@ using UnityEngine;
 public class GlobalFXController : MonoBehaviour
 {
     [SerializeField]
-    [Range(0, 25)]
+    [Range(0, 10)]
     private float _whiteOutDistance;
     [SerializeField]
-    [Range(0, 25)]
+    [Range(0, 10)]
     private float _desaturationDistance;
     [SerializeField]
     [Range(0, 1)]

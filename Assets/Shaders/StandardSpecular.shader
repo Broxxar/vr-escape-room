@@ -80,6 +80,7 @@ Shader "Standard (Specular setup)"
             #pragma shader_feature _ _SPECULARHIGHLIGHTS_OFF
             #pragma shader_feature _ _GLOSSYREFLECTIONS_OFF
             #pragma shader_feature _PARALLAXMAP
+            #pragma shader_feature _IGNORE_GLOBAL_FX
             #pragma multi_compile _ _GLOBALFX_ENABLED
 
             #pragma multi_compile_fwdbase
@@ -117,6 +118,7 @@ Shader "Standard (Specular setup)"
             #pragma shader_feature _ _SPECULARHIGHLIGHTS_OFF
             #pragma shader_feature ___ _DETAIL_MULX2
             #pragma shader_feature _PARALLAXMAP
+            #pragma shader_feature _IGNORE_GLOBAL_FX
             #pragma multi_compile _ _GLOBALFX_ENABLED
 
             #pragma multi_compile_fwdadd_fullshadows
@@ -246,6 +248,7 @@ Shader "Standard (Specular setup)"
             #pragma shader_feature _ _SPECULARHIGHLIGHTS_OFF
             #pragma shader_feature _ _GLOSSYREFLECTIONS_OFF
             #pragma shader_feature ___ _DETAIL_MULX2
+            #pragma shader_feature _IGNORE_GLOBAL_FX
             #pragma multi_compile _ _GLOBALFX_ENABLED
             // SM2.0: NOT SUPPORTED shader_feature _PARALLAXMAP
 
@@ -280,6 +283,7 @@ Shader "Standard (Specular setup)"
             #pragma shader_feature _ _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A
             #pragma shader_feature _ _SPECULARHIGHLIGHTS_OFF
             #pragma shader_feature ___ _DETAIL_MULX2
+            #pragma shader_feature _IGNORE_GLOBAL_FX
             #pragma multi_compile _ _GLOBALFX_ENABLED
             // SM2.0: NOT SUPPORTED shader_feature _PARALLAXMAP
             #pragma skip_variants SHADOWS_SOFT

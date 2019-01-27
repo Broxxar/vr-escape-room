@@ -12,8 +12,13 @@ public class PuzzleController : MonoBehaviour {
         {
             puzzle.onComplete.AddListener(OnPuzzleCompleted);
         }
-		
 	}
+
+    private void Update() {
+        if (Input.GetKeyDown(KeyCode.P)) {
+            OnAllPuzzlesCompleted();
+        }
+    }
 
     void OnPuzzleCompleted(Puzzle puzzle)
     {
@@ -25,6 +30,11 @@ public class PuzzleController : MonoBehaviour {
             }
             //print(puzzle.name);
         }
-        print("All puzzles complete");
+        OnAllPuzzlesCompleted();
+    }
+
+    public void OnAllPuzzlesCompleted() {
+        print("Completed!");
+        AMSceneManager.instance.ReturnToStartingZone();
     }
 }

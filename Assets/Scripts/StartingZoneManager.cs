@@ -21,14 +21,11 @@ public class ObjStringPair {
 public class StartingZoneManager : MonoBehaviour {
 
     public ObjStringPair[] triggerObjScenePairs;
+    public Transform spawnLocation;
 
-    public GameObject temp;
+    private GameObject artificialGrabber; // DEBUG
 
     private bool startedGame = false;
-
-    private void Start() {
-        
-    }
 
     private void Update() {
         if (!startedGame) {
@@ -40,11 +37,16 @@ public class StartingZoneManager : MonoBehaviour {
 
         // DEBUG
         if (Input.GetKeyDown(KeyCode.K)) {
-            temp.GetComponent<CustomGrabbable>().OnGrabBegin.Invoke();
+            artificialGrabber.GetComponent<CustomGrabbable>().OnGrabBegin.Invoke();
         }
     }
 
     public void GrabbedLevelTrigger(int dataIndex) {
         AMSceneManager.instance.SelectScene(triggerObjScenePairs[dataIndex]);
+    }
+
+    public void PrepareLevel(int dataIndex) {
+        triggerObjScenePairs[dataIndex].obj.SetActive(true);
+        artificialGrabber = triggerObjScenePairs[dataIndex].obj;
     }
 }

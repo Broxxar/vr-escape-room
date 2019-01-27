@@ -7,9 +7,10 @@ TagManager:
   - Grabbable
   - Patient
   - Physician
-  - Eating
   - Snappable
   - Basket
+  - Eating
+  - Eatable
   layers:
   - Default
   - TransparentFX

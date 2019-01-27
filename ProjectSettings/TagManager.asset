@@ -11,6 +11,8 @@ TagManager:
   - Basket
   - Eating
   - Eatable
+  - Basketaball
+  - Basketable
   layers:
   - Default
   - TransparentFX

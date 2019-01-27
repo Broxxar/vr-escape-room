@@ -304,7 +304,45 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 114552281001984060, guid: ff6e9ca12d932b346984d73d5228a73b,
+        type: 2}
+      propertyPath: triggerEnterEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 313857992}
+    - target: {fileID: 114552281001984060, guid: ff6e9ca12d932b346984d73d5228a73b,
+        type: 2}
+      propertyPath: triggerEnterEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnVegetableAdded
+      objectReference: {fileID: 0}
+    - target: {fileID: 114552281001984060, guid: ff6e9ca12d932b346984d73d5228a73b,
+        type: 2}
+      propertyPath: triggerExitEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 313857992}
+    - target: {fileID: 114552281001984060, guid: ff6e9ca12d932b346984d73d5228a73b,
+        type: 2}
+      propertyPath: triggerExitEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnVegetableRemoved
+      objectReference: {fileID: 0}
+    - target: {fileID: 114552281001984060, guid: ff6e9ca12d932b346984d73d5228a73b,
+        type: 2}
+      propertyPath: tag
+      value: Basketable
+      objectReference: {fileID: 0}
+    - target: {fileID: 4885254900891246, guid: ff6e9ca12d932b346984d73d5228a73b, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4885254900891246, guid: ff6e9ca12d932b346984d73d5228a73b, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4885254900891246, guid: ff6e9ca12d932b346984d73d5228a73b, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 15
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 114298023057623854, guid: ff6e9ca12d932b346984d73d5228a73b, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: ff6e9ca12d932b346984d73d5228a73b, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &313857990 stripped
@@ -312,6 +350,23 @@ GameObject:
   m_PrefabParentObject: {fileID: 1560590782210032, guid: ff6e9ca12d932b346984d73d5228a73b,
     type: 2}
   m_PrefabInternal: {fileID: 313857989}
+--- !u!1 &313857991 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1551408199951802, guid: ff6e9ca12d932b346984d73d5228a73b,
+    type: 2}
+  m_PrefabInternal: {fileID: 313857989}
+--- !u!114 &313857992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 313857991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ee9a85652601b1458197373ddfe0f64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  requiredCount: 3
 --- !u!1 &660819566
 GameObject:
   m_ObjectHideFlags: 0

@@ -38,9 +38,10 @@ public class GardenBasketPuzzle : Puzzle {
     public void OnVegetableAdded()
     {
         count += 1;
-        if (count >= requiredCount)
+        if (!isComplete && count >= requiredCount)
         {
             Complete();
+            print("Completed basket puzzle");
         }
     }
 

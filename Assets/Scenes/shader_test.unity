@@ -234,7 +234,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 1, g: 1, b: 1, a: 0}
+  m_BackGroundColor: {r: 1, g: 1, b: 1, a: 1}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -796,9 +796,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e1444c6b466642b487adac7c75f8321, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _whiteOutDistance: 0
-  _desaturationDistance: 0
+  _whiteOutDistance: 25
+  _desaturationDistance: 25
   _saturationValue: 0
+  _fadeOutValue: 1
   _noiseTexture: {fileID: 2800000, guid: 120f863259f0946cfbe82287f6966c7b, type: 3}
   _whiteOutCurve:
     serializedVersion: 2
@@ -818,24 +819,14 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
-  _desaturationCruve:
+  _desaturationCurve:
     serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0.5
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - serializedVersion: 2
-      time: 1
-      value: 25
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
+    m_Curve: []
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 0
+    m_RotationOrder: 4
+  cameras:
+  - {fileID: 57899903}
 --- !u!4 &1263693652
 Transform:
   m_ObjectHideFlags: 0

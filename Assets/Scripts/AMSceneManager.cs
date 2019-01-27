@@ -8,7 +8,11 @@ public class AMSceneManager : MonoBehaviour {
     public string[] sceneNames;
     public int sceneIndex = 0;
 
+    private GlobalFXController fxController;
+
     private void Start() {
+        fxController = GetComponent<GlobalFXController>();
+        fxController.FadeWorldIn();
         SceneManager.LoadScene(sceneNames[sceneIndex], LoadSceneMode.Additive);
     }
 
@@ -19,18 +23,18 @@ public class AMSceneManager : MonoBehaviour {
     }
 
     public void MoveToNextLevel() {
-        // Trigger cleanup transition
-        LoadNextScene();
-        // Setup transition automatically starts
+        fxController.FadeWorldOut(() => LoadNextScene());
     }
 
     private void LoadNextScene() {
-        SceneManager.UnloadScene(sceneNames[sceneIndex]);
+        SceneManager.UnloadSceneAsync(sceneNames[sceneIndex]);
         sceneIndex += 1;
         if (sceneIndex < sceneNames.Length) {
             SceneManager.LoadScene(sceneNames[sceneIndex], LoadSceneMode.Additive);
         } else {
             Debug.LogWarning("No more scenes to progress through.");
         }
+        
+        fxController.FadeWorldIn();
     }
 }

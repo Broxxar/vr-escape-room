@@ -17,3 +17,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/living room.unity
     guid: 69b6dd27869256e428dcd2c94c279e90
+  - enabled: 1
+    path: Assets/Scenes/starting zone.unity
+    guid: fa50d2b36180f4140abdd60a121f96a2

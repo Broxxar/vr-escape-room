@@ -2,40 +2,49 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Events;
 
 public class AMSceneManager : MonoBehaviour {
 
-    public string[] sceneNames;
-    public int sceneIndex = 0;
+    public static AMSceneManager instance;
+    public string startingSceneName;
+    public GlobalFXController fxController;
+    public Transform fxControllerTargetTransform;
 
-    private GlobalFXController fxController;
+    private string currentSceneName;
 
     private void Start() {
-        fxController = GetComponent<GlobalFXController>();
-        fxController.FadeWorldIn();
-        fxController.FadeColor(0, 1);
-        SceneManager.LoadScene(sceneNames[sceneIndex], LoadSceneMode.Additive);
+        if (instance == null) {
+            instance = this;
+        } else if (instance != this) {
+            Destroy(this);
+        }
+
+        SceneManager.LoadScene(startingSceneName, LoadSceneMode.Additive);
+        currentSceneName = startingSceneName;
     }
 
     private void Update() {
-        if (Input.GetKeyDown(KeyCode.Space)) {
-            MoveToNextLevel();
+        // Update fxController position if linked to another obj
+        if (fxControllerTargetTransform != null) {
+            fxController.transform.position = fxControllerTargetTransform.position;
         }
     }
 
-    public void MoveToNextLevel() {
-        fxController.FadeWorldOut(() => LoadNextScene());
+    /**
+     * Transition to a different scene.
+     */
+    public void SelectScene(ObjStringPair triggerObjScenePair) {
+        fxControllerTargetTransform = triggerObjScenePair.obj.transform;
+        DontDestroyOnLoad(triggerObjScenePair.obj.transform);
+        // TODO: Fade Out?
+        LoadScene(triggerObjScenePair.str);
+        fxController.FadeDistance(1, 2);
+        fxController.FadeColor(1, 2);
     }
 
-    private void LoadNextScene() {
-        SceneManager.UnloadSceneAsync(sceneNames[sceneIndex]);
-        sceneIndex += 1;
-        if (sceneIndex < sceneNames.Length) {
-            SceneManager.LoadScene(sceneNames[sceneIndex], LoadSceneMode.Additive);
-        } else {
-            Debug.LogWarning("No more scenes to progress through.");
-        }
-        
-        fxController.FadeWorldIn();
+    private void LoadScene(string sceneName) {
+        SceneManager.UnloadSceneAsync(currentSceneName);
+        SceneManager.LoadScene(sceneName, LoadSceneMode.Additive);
     }
 }

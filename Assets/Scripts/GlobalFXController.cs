@@ -16,7 +16,7 @@ public class GlobalFXController : MonoBehaviour
     private float _saturationValue = 1.0f;
     [SerializeField]
     [Range(0, 1)]
-    private float _fadeOutValue = 1.0f;
+    private float _fadeOutValue = 0.0f;
     [SerializeField]
     private Texture2D _noiseTexture;
 
@@ -31,7 +31,6 @@ public class GlobalFXController : MonoBehaviour
 
     private Coroutine _activeDistanceCoroutine;
     private Coroutine _activeColorCoroutine;
-    [SerializeField]
     private float _transitionProgress;
     private float _transitionVelocity;
 

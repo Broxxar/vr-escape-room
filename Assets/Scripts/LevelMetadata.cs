@@ -1,9 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class LevelMetadata : MonoBehaviour {
-
+public class LevelMetadata : MonoBehaviour
+{
     public Transform spawnLocation;
     public PuzzleController puzzleController;
+    public AudioClipData sceneBgm;
+    public AudioClipData sceneAmbient;
 }

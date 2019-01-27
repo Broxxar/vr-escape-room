@@ -1,0 +1,337 @@
+newmtl TOWN_SCENE_LP:blinn1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd -mm_0_0.0649351_doggo_weathervane.png
+bump  -bm 1 doggo_weathervane_NRM.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks doggo_weathervane_SPEC.png
+newmtl TOWN_SCENE_LP:blinn2SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd window_2.jpg
+bump  -bm 0.540541 window_2_blackwindow_NRM.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks window_2_SPEC.png
+newmtl TOWN_SCENE_LP:blinn3SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Old_Barred_Window-576x600.jpg
+bump  -bm 1 Old_Barred_Window-576x600_NRM.png
+Ni 1.00
+Ks 0.50 0.50 0.50
+newmtl TOWN_SCENE_LP:blinn4SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Doors_5.jpg
+Ni 1.00
+Ks 0.50 0.50 0.50
+newmtl TOWN_SCENE_LP:lambert2SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd -mm_0_0_Hanging_Cables_(12).png
+Ni 1.00
+newmtl TOWN_SCENE_LP:phong1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd window_1.jpg
+Ni 1.00
+Ks 0.50 0.50 0.50
+Ns 18.00
+newmtl TOWN_SCENE_LP:phong2SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd window_with_shutters.jpg
+bump  -bm -1.689189 window_with_shutters_NRM.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks window_with_shutters_SPEC.jpg
+Ns 18.00
+newmtl TOWN_SCENE_LP:phong3SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd door_1.jpg
+Ni 1.00
+Ks 0.50 0.50 0.50
+Ns 18.00
+newmtl TOWN_SCENE_LP:phong4SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd door_2.jpg
+Ni 1.00
+Ks 0.50 0.50 0.50
+Ns 18.00
+newmtl TOWN_SCENE_LP:phong5SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd WoodFine15_dark_1.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks WoodFine15_SPEC.png
+Ns 18.00
+newmtl TOWN_SCENE_LP:phong6SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd brugge_backdrop.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+Ns 18.00
+newmtl TOWN_SCENE_LP:phong7SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd -s_0.2_0.2_wood_shingles_sculpted_height.png
+Ni 1.00
+Ks 0.50 0.50 0.50
+Ns 18.00
+newmtl TOWN_SCENE_LP:phong8SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd -mm_0_0_Hanging_Cables_(4).png
+Ni 1.00
+Ks 0.01 0.01 0.01
+Ns 98.00
+newmtl TOWN_SCENE_LP:phong10SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd store_sign_1.png
+bump  -bm 0.405405 -mm_0_0.61039_store_sign_1_NRM.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks -mm_0_0.0909091_store_sign_1_specref.png
+Ns 18.00
+newmtl TOWN_SCENE_LP:phong12SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd COBBLESTONES-04_Color_4k.jpg
+bump  -bm 0.472973 COBBLESTONES-04_Normal_4k.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks COBBLESTONES-04_Gloss_4k.jpg
+Ns -1.00
+newmtl TOWN_SCENE_LP:phong13SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd store_sign_2.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks store_sign_2_specref_SPEC.png
+Ns 18.00
+newmtl TOWN_SCENE_LP:phong14SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd lamp.png
+Ni 1.00
+Ks 0.50 0.50 0.50
+Ns 18.00
+newmtl TOWN_SCENE_LP:phong15SG
+illum 4
+Kd 0.00 0.00 1.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.50 0.50 0.50
+Ns 18.00
+newmtl TOWN_SCENE_LP:phongE1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd door_3.jpg
+Ni 1.00
+Ks 0.50 0.50 0.50
+newmtl TOWN_SCENE_LP:phongE3SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd flower_window.jpg
+bump  -bm -1.216216 flower_window_NRM.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks flower_window_SPEC.png
+newmtl TOWN_SCENE_LP:phongE6SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd door_4.jpg
+Ni 1.00
+Ks 0.50 0.50 0.50
+newmtl TOWN_SCENE_LP:phongE7SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Arched_Door1.jpg
+Ni 1.00
+Ks 0.50 0.50 0.50
+newmtl TOWN_SCENE_LP:phongE8SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd door_6.jpg
+Ni 1.00
+Ks 0.50 0.50 0.50
+newmtl TOWN_SCENE_LP:phongE9SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd STONE-WALL-07_AO_4k.jpg
+Ni 1.00
+Ks 0.50 0.50 0.50
+newmtl TOWN_SCENE_LP:phongE10SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Hanging_Cables_(5).png
+Ni 1.00
+Ks 0.00 0.00 0.00
+newmtl TOWN_SCENE_LP:phongE11SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd -mm_0_0.24026_pennant_dragon.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+newmtl TOWN_SCENE_LP:phongE12SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd export_try2_BASES1_AlbedoTransparency.png
+Ni 1.00
+Ks 0.50 0.50 0.50
+newmtl TOWN_SCENE_LP:phongE13SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd export_try2_BASE_ARCH_AlbedoTransparency.png
+Ni 1.00
+Ks 0.50 0.50 0.50
+newmtl TOWN_SCENE_LP:phongE14SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd export_try2_BASES35_AlbedoTransparency.png
+Ni 1.00
+Ks 0.50 0.50 0.50
+newmtl TOWN_SCENE_LP:phongE15SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd export_try2_BASE_ARCH_1_AlbedoTransparency.png
+Ni 1.00
+Ks 0.50 0.50 0.50
+newmtl TOWN_SCENE_LP:phongE16SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd export_try2_BASES2_AlbedoTransparency.png
+Ni 1.00
+Ks 0.50 0.50 0.50
+newmtl TOWN_SCENE_LP:phongE17SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd export_try2_BASE_ARCH2_AlbedoTransparency.png
+Ni 1.00
+Ks 0.50 0.50 0.50
+newmtl TOWN_SCENE_LP:phongE18SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd export_try2_BASES4_AlbedoTransparency.png
+Ni 1.00
+Ks 0.50 0.50 0.50
+newmtl blinn1SG
+illum 4
+Kd 0.00 1.00 1.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.50 0.50 0.50
+newmtl blinn2SG
+illum 4
+Kd 1.00 0.49 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.50 0.50 0.50
+newmtl initialShadingGroup
+illum 4
+Kd 0.50 0.50 0.50
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl lambert3SG
+illum 4
+Kd 1.00 0.00 1.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+bump  -bm 1 sampledNormals.jpg
+Ni 1.00
+newmtl lambert4SG
+illum 4
+Kd 0.00 1.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl lambert5SG
+illum 4
+Kd 0.50 0.50 0.50
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl phong1SG
+illum 4
+Kd 0.00 0.00 1.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.50 0.50 0.50
+Ns 18.00

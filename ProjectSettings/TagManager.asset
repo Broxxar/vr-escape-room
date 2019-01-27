@@ -8,6 +8,8 @@ TagManager:
   - Patient
   - Physician
   - Eating
+  - Snappable
+  - Basket
   layers:
   - Default
   - TransparentFX

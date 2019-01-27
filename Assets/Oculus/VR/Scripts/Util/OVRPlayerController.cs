@@ -207,43 +207,45 @@ public class OVRPlayerController : MonoBehaviour
 
 		if (Input.GetKeyDown(KeyCode.E))
 			buttonRotation += RotationRatchet;
-	}
+
+        //UpdateController();
+    }
 
 	protected virtual void UpdateController()
 	{
-		if (useProfileData)
-		{
-			if (InitialPose == null)
-			{
-				// Save the initial pose so it can be recovered if useProfileData
-				// is turned off later.
-				InitialPose = new OVRPose()
-				{
-					position = CameraRig.transform.localPosition,
-					orientation = CameraRig.transform.localRotation
-				};
-			}
+		//if (useProfileData)
+		//{
+		//	if (InitialPose == null)
+		//	{
+		//		// Save the initial pose so it can be recovered if useProfileData
+		//		// is turned off later.
+		//		InitialPose = new OVRPose()
+		//		{
+		//			position = CameraRig.transform.localPosition,
+		//			orientation = CameraRig.transform.localRotation
+		//		};
+		//	}
 
-			var p = CameraRig.transform.localPosition;
-			if (OVRManager.instance.trackingOriginType == OVRManager.TrackingOrigin.EyeLevel)
-			{
-				p.y = OVRManager.profile.eyeHeight - (0.5f * Controller.height) + Controller.center.y;
-			}
-			else if (OVRManager.instance.trackingOriginType == OVRManager.TrackingOrigin.FloorLevel)
-			{
-				p.y = -(0.5f * Controller.height) + Controller.center.y;
-			}
-			CameraRig.transform.localPosition = p;
-		}
-		else if (InitialPose != null)
-		{
-			// Return to the initial pose if useProfileData was turned off at runtime
-			CameraRig.transform.localPosition = InitialPose.Value.position;
-			CameraRig.transform.localRotation = InitialPose.Value.orientation;
-			InitialPose = null;
-		}
+		//	var p = CameraRig.transform.localPosition;
+		//	if (OVRManager.instance.trackingOriginType == OVRManager.TrackingOrigin.EyeLevel)
+		//	{
+		//		p.y = OVRManager.profile.eyeHeight - (0.5f * Controller.height) + Controller.center.y;
+		//	}
+		//	else if (OVRManager.instance.trackingOriginType == OVRManager.TrackingOrigin.FloorLevel)
+		//	{
+		//		p.y = -(0.5f * Controller.height) + Controller.center.y;
+		//	}
+		//	CameraRig.transform.localPosition = p;
+		//}
+		//else if (InitialPose != null)
+		//{
+		//	// Return to the initial pose if useProfileData was turned off at runtime
+		//	CameraRig.transform.localPosition = InitialPose.Value.position;
+		//	CameraRig.transform.localRotation = InitialPose.Value.orientation;
+		//	InitialPose = null;
+		//}
 
-		CameraHeight = CameraRig.centerEyeAnchor.localPosition.y;
+		//CameraHeight = CameraRig.centerEyeAnchor.localPosition.y;
 
 		if (CameraUpdated != null)
 		{

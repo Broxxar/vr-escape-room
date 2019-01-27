@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class GardenBasketPuzzle : Puzzle {
 
+    public static GardenBasketPuzzle instance;
+
+
     /*public void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Basket"))
@@ -24,15 +27,21 @@ public class GardenBasketPuzzle : Puzzle {
 
     }*/
 
+    private void Start()
+    {
+        instance = this;
+    }
+
     public int requiredCount = 3;
     private int count = 0;
 
     public void OnVegetableAdded()
     {
         count += 1;
-        if (count >= requiredCount)
+        if (!isComplete && count >= requiredCount)
         {
             Complete();
+            print("Completed basket puzzle");
         }
     }
 

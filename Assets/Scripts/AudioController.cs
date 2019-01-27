@@ -12,6 +12,20 @@ public class AudioController : MonoBehaviour
 
     private AudioClipData _ambientClipData;
 
+    private static AudioController _instance;
+
+    public static AudioController Instance
+    {
+        get
+        {
+            if (!_instance)
+            {
+                _instance = FindObjectOfType<AudioController>();
+            }
+            return _instance;
+        }
+    }
+
     public void PlayBGM(AudioClipData clipData)
     {
         _bgmClipData = clipData;

@@ -204,7 +204,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4863346097074438, guid: 7917c0535971f044bb97d87570ce104b, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4863346097074438, guid: 7917c0535971f044bb97d87570ce104b, type: 2}
       propertyPath: m_LocalPosition.z
@@ -238,6 +238,22 @@ GameObject:
   m_PrefabParentObject: {fileID: 1472766844696640, guid: 7917c0535971f044bb97d87570ce104b,
     type: 2}
   m_PrefabInternal: {fileID: 1153743778}
+--- !u!1 &1914135769 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1552994874987112, guid: 7917c0535971f044bb97d87570ce104b,
+    type: 2}
+  m_PrefabInternal: {fileID: 1153743778}
+--- !u!114 &1914135771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1914135769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 582de7f825cc9404ea227423fd0cf4fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!20 &1960357028 stripped
 Camera:
   m_PrefabParentObject: {fileID: 20424801121574640, guid: 7917c0535971f044bb97d87570ce104b,

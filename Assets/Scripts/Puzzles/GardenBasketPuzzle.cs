@@ -3,15 +3,42 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GardenBasketPuzzle : Puzzle {
-	
-	public void addBasket()
+
+    /*public void OnTriggerEnter(Collider other)
     {
-        Complete();
+        if (other.gameObject.CompareTag("Basket"))
+        {
+            Complete();
+            print(this.name);
+        }
+        
     }
 
-    public void subBasket()
+    public void OnTriggerExit(Collider other)
     {
-        Incomplete();
+        if (other.gameObject.CompareTag("Basket"))
+        {
+            Incomplete();
+            print(this.name);
+        }
+
+    }*/
+
+    public int requiredCount = 3;
+    private int count = 0;
+
+    public void OnVegetableAdded()
+    {
+        count += 1;
+        if (count >= requiredCount)
+        {
+            Complete();
+        }
+    }
+
+    public void OnVegetableRemoved()
+    {
+        count -= 1;
     }
 
 }

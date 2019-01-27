@@ -7,9 +7,7 @@ public class GardenSceneManager : MonoBehaviour {
     public PuzzleController puzzleController;
 
     private void Start() {
-        GameObject player = GameObject.Find("VRPlayer");
-        GameObject eatingSphere = player.transform
-                .Find("OVRCameraRig")
+        GameObject eatingSphere = GameObject.Find("OVRCameraRig").transform
                 .Find("TrackingSpace")
                 .Find("CenterEyeAnchor")
                 .Find("EatingSphere")

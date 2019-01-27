@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class PuzzleController : MonoBehaviour {
 
-    private List<Puzzle> puzzles;
+    public List<Puzzle> puzzles;
 
 	void Start () {
         foreach(var puzzle in puzzles)

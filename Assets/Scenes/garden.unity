@@ -1448,6 +1448,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnLocation: {fileID: 1254441515}
+  puzzleController: {fileID: 1803270071}
 --- !u!1 &813840863
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,4 +5,5 @@ using UnityEngine;
 public class LevelMetadata : MonoBehaviour {
 
     public Transform spawnLocation;
+    public PuzzleController puzzleController;
 }

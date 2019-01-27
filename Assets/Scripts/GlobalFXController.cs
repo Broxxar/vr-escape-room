@@ -15,13 +15,19 @@ public class GlobalFXController : MonoBehaviour
     [Range(0, 1)]
     private float _saturationValue = 1.0f;
     [SerializeField]
+    [Range(0, 1)]
+    private float _fadeOutValue = 1.0f;
+    [SerializeField]
     private Texture2D _noiseTexture;
 
     [SerializeField]
     private AnimationCurve _whiteOutCurve;
 
     [SerializeField]
-    private AnimationCurve _desaturationCruve;
+    private AnimationCurve _desaturationCurve;
+
+    [SerializeField]
+    private Camera[] cameras;
 
     private Coroutine _activeCoroutine;
     private float _transitionProgress;
@@ -33,6 +39,7 @@ public class GlobalFXController : MonoBehaviour
     private const string DesaturationDistanceName = "_GlobalDesaturationDistance";
     private const string DesaturationNoiseTexture = "_GlobalDesaturationNoiseTex";
     private const string GlobalFXKeyword = "_GLOBALFX_ENABLED";
+    private const string FadeOutValueName = "_GlobalFadeOutValue";
 
     public void FadeWorldIn(Action onComplete = null)
     {
@@ -61,11 +68,11 @@ public class GlobalFXController : MonoBehaviour
         {
             _transitionProgress = Mathf.SmoothDamp(_transitionProgress, transitionTarget, ref _transitionVelocity, transitionTime);
             _whiteOutDistance = _whiteOutCurve.Evaluate(_transitionProgress);
-            _desaturationDistance = _desaturationCruve.Evaluate(_transitionProgress);
+            _desaturationDistance = _desaturationCurve.Evaluate(_transitionProgress);
             yield return null;
         }
         _whiteOutDistance = _whiteOutCurve.Evaluate(transitionTarget);
-        _desaturationDistance = _desaturationCruve.Evaluate(transitionTarget);
+        _desaturationDistance = _desaturationCurve.Evaluate(transitionTarget);
         if (onComplete != null)
         {
             onComplete.Invoke();
@@ -89,5 +96,10 @@ public class GlobalFXController : MonoBehaviour
         Shader.SetGlobalFloat(DesaturationDistanceName, _desaturationDistance);
         Shader.SetGlobalTexture(DesaturationNoiseTexture, _noiseTexture);
         Shader.SetGlobalFloat(SaturationValueName, _saturationValue);
+        Shader.SetGlobalFloat(FadeOutValueName, _fadeOutValue);
+
+        foreach (Camera cam in cameras) {
+            cam.backgroundColor = new Color(_fadeOutValue, _fadeOutValue, _fadeOutValue);
+        }
     }
 }

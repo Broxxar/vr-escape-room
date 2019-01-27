@@ -2,6 +2,7 @@ half _GlobalWhiteOutDistance;
 half3 _GlobalDesaturationPosition;
 half _GlobalDesaturationDistance;
 half _GlobalSaturationValue;
+half _GlobalFadeOutValue;
 sampler2D _GlobalDesaturationNoiseTex;
 
 half4 PostProcessFragment(half4 color, half3 posWorld, half3 normalWorld)
@@ -24,7 +25,7 @@ half4 PostProcessFragment(half4 color, half3 posWorld, half3 normalWorld)
         
         color = lerp(color, lum, min(1 - _GlobalSaturationValue, tDesat));
 
-        return lerp(color, 1, tWhiteOut);
+		return lerp(color, _GlobalFadeOutValue, tWhiteOut);
     #else
         return color;
     #endif

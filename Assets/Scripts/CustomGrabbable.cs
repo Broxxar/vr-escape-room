@@ -28,6 +28,13 @@ public class CustomGrabbable : OVRGrabbable
                 m_grabbedBy.ForceRelease(this);
             }
 
+            var snappable = col.gameObject.GetComponent<SnappableReceiver>();
+            if (snappable != null)
+            {
+                snappable.NotifySnapped();
+                col.enabled = false;
+            }
+
             GetComponent<Rigidbody>().isKinematic = true;
             transform.parent = col.gameObject.transform.Find("SnapPos");
             transform.localPosition = Vector3.zero;

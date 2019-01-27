@@ -321,7 +321,7 @@ Prefab:
     - target: {fileID: 143709761624637260, guid: 7917c0535971f044bb97d87570ce104b,
         type: 2}
       propertyPath: m_Height
-      value: 1.5
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 143709761624637260, guid: 7917c0535971f044bb97d87570ce104b,
         type: 2}

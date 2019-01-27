@@ -14,5 +14,6 @@ public class GardenSceneManager : MonoBehaviour {
                 .gameObject;
 
         puzzleController.AddPuzzle(eatingSphere.GetComponent<GardenBulbPuzzle>());
+        puzzleController.AddPuzzle(GardenBasketPuzzle.instance);
     }
 }

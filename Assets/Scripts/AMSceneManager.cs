@@ -6,12 +6,16 @@ using UnityEngine.Events;
 
 public class AMSceneManager : MonoBehaviour {
 
+    public const string LEVEL_METADATA_NAME = "LevelMetadata";
+
     public static AMSceneManager instance;
     public string startingSceneName;
     public GlobalFXController fxController;
-    public Transform fxControllerTargetTransform;
+    public GameObject player;
 
     private string currentSceneName;
+    private LevelMetadata currentLevelMetadata;
+    private Transform fxControllerTargetTransform;
 
     private void Start() {
         if (instance == null) {
@@ -39,12 +43,18 @@ public class AMSceneManager : MonoBehaviour {
         DontDestroyOnLoad(triggerObjScenePair.obj.transform);
         // TODO: Fade Out?
         LoadScene(triggerObjScenePair.str);
-        fxController.FadeDistance(1, 2);
-        fxController.FadeColor(1, 2);
     }
 
     private void LoadScene(string sceneName) {
         SceneManager.UnloadSceneAsync(currentSceneName);
-        SceneManager.LoadScene(sceneName, LoadSceneMode.Additive);
+        SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive).completed += FinishedLoadingScene;
+    }
+
+    private void FinishedLoadingScene(AsyncOperation obj) {
+        fxController.FadeDistance(1, 2);
+        fxController.FadeColor(1, 2);
+        currentLevelMetadata = GameObject.Find(LEVEL_METADATA_NAME).GetComponent<LevelMetadata>();
+        player.transform.position = currentLevelMetadata.spawnLocation.position;
+        player.transform.rotation = currentLevelMetadata.spawnLocation.rotation;
     }
 }

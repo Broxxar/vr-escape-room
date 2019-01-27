@@ -7,6 +7,10 @@ sampler2D _GlobalDesaturationNoiseTex;
 
 half4 PostProcessFragment(half4 color, half3 posWorld, half3 normalWorld)
 {
+    #ifdef _IGNORE_GLOBAL_FX
+        return color;
+    #endif
+
     #ifdef _GLOBALFX_ENABLED
         half lum = dot(color.rgb, half3(0.30, 0.59, 0.11));
     

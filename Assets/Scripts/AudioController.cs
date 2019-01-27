@@ -8,6 +8,9 @@ public class AudioController : MonoBehaviour
     [SerializeField]
     private AudioSource _ambientSource;
 
+    [SerializeField]
+    private AudioSource _voSource;
+
     private AudioClipData _bgmClipData;
 
     private AudioClipData _ambientClipData;
@@ -44,6 +47,13 @@ public class AudioController : MonoBehaviour
         _ambientSource.Play();
     }
 
+    public void PlayVO(AudioClip audioClip)
+    {
+        _voSource.Stop();
+        _voSource.clip = audioClip;
+        _voSource.Play();
+    }
+
     private void Update()
     {
         if (_bgmClipData != null
@@ -51,6 +61,11 @@ public class AudioController : MonoBehaviour
             && _bgmSource.time > _bgmClipData.DynamicDuration)
         {
             _bgmSource.time = _bgmClipData.DynamicLoopTime;
+        }
+
+        if (Input.GetKeyDown(KeyCode.U))
+        {
+            _voSource.Play();
         }
     }
 }

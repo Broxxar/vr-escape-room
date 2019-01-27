@@ -8,7 +8,7 @@ public class Eatable : MonoBehaviour {
     {
         if(col.gameObject.tag == "Eating")
         {
-            Destroy(this.gameObject);
+            Destroy(col.gameObject);
         }
     }
 }
